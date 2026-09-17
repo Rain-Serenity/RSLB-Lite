@@ -31,6 +31,8 @@ public class YggdrasilAuthenticationService {
          return YggdrasilAuthenticationResult.ofNoService();
       }
 
+      this.core.logDebug(String.format("Trying %d Yggdrasil services for %s (serverId=%s)", serviceConfigs.size(), username, serverId));
+
       EntrustFlows<HasJoinedContext> flows = new EntrustFlows(
          serviceConfigs.stream().map(i -> new YggdrasilAuthenticationFlows(this.core, username, serverId, ip, i)).collect(Collectors.toList())
       );
@@ -43,12 +45,19 @@ public class YggdrasilAuthenticationService {
       }
 
       if (context.getServiceUnavailable().size() == 0) {
+         this.core.getLogger().warning(
+            String.format("All Yggdrasil services responded but returned no valid session for %s (serverId=%s). Check client auth configuration.", username, serverId)
+         );
          return YggdrasilAuthenticationResult.ofValidationFailed();
       }
 
       for (Entry<BaseYggdrasilServiceConfig, Throwable> entry : context.getServiceUnavailable().entrySet()) {
          this.core
-            .logDebug("An exception occurred during authentication of the yggdrasil service whose ID is " + entry.getKey().getId(), entry.getValue());
+            .getLogger().warning(
+               String.format("Yggdrasil service %s (id=%d) failed for %s: %s",
+                  entry.getKey().getName(), entry.getKey().getId(), username, entry.getValue().getMessage())
+            );
+         this.core.logDebug("Full exception for service " + entry.getKey().getId(), entry.getValue());
       }
 
       return YggdrasilAuthenticationResult.ofServerBreakdown();
