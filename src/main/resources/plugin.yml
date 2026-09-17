@@ -5,3 +5,25 @@ author: Chosen_1st
 website: www.RSerene.com
 api-version: '26.3'
 folia-supported: true
+commands:
+  rslb:
+    description: "RSLB Lite 登录管理指令"
+    usage: "/rslb help"
+    permission: rslb.base
+    permission-message: "&c你没有权限使用此指令。"
+permissions:
+  rslb.base:
+    description: "rslb base command"
+    default: true
+  rslb.tab.complete:
+    description: "rslb tab complete"
+    default: true
+  rslb.reload:
+    description: "rslb reload"
+    default: op
+  rslb.info.oneself:
+    description: "rslb info oneself"
+    default: op
+  rslb.info.other:
+    description: "rslb info other"
+    default: op
