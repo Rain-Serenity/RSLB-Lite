@@ -3,7 +3,6 @@ package com.rserene.chosen.server.auth.service.yggdrasil;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
-import java.util.Objects;
 import com.rserene.chosen.server.util.Pair;
 import com.rserene.chosen.server.profile.GameProfile;
 import com.rserene.chosen.server.config.service.yggdrasil.BaseYggdrasilServiceConfig;
@@ -66,26 +65,25 @@ public class YggdrasilAuthenticationFlows extends BaseFlows<HasJoinedContext> {
       Call call = client.newCall(request);
       Response execute = call.execute();
 
-      GameProfile var6;
       try {
-         var6 = (GameProfile)this.core.getGson().fromJson(Objects.requireNonNull(execute.body()).string(), GameProfile.class);
-      } catch (Throwable var9) {
-         if (execute != null) {
-            try {
-               execute.close();
-            } catch (Throwable var8) {
-               var9.addSuppressed(var8);
+         int code = execute.code();
+         if (code == 204 || code == 200) {
+            okhttp3.ResponseBody body = execute.body();
+            if (body == null) {
+               return null;
             }
+            String json = body.string();
+            if (json == null || json.isEmpty()) {
+               return null;
+            }
+            GameProfile profile = this.core.getGson().fromJson(json, GameProfile.class);
+            return profile;
+         } else {
+            throw new IOException("Yggdrasil server returned HTTP " + code + " for " + config.getName());
          }
-
-         throw var9;
-      }
-
-      if (execute != null) {
+      } finally {
          execute.close();
       }
-
-      return var6;
    }
 
    public Signal run(HasJoinedContext hasJoinedContext) {
