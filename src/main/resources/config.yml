@@ -1,0 +1,38 @@
+# ============================================================
+#  RSLB Lite - 正版与外置登录共存 (Bukkit 版本)
+#
+#  配置文件使用 YAML 格式，推荐使用 Visual Studio Code 编辑。
+#  前往 'https://yaml.org/' 查阅 YAML 配置语法。
+#  除布尔值、整数、浮点数外的值请使用引号包裹。
+#
+#  修改后执行 /rslb reload 即可热重载（部分设置需要重启生效）。
+# ============================================================
+
+# ---------- 通用设置 ----------
+settings:
+  # 开启 DEBUG 日志（将输出登录拦截、认证请求等调试信息到控制台）。
+  # 默认值: false
+  debug: false
+
+  # 向登录成功的玩家发送欢迎消息。
+  # 默认值: true
+  welcome-message: true
+
+  # 是否校验客户端的聊天会话公钥（Profile Public Key）。
+  # 默认关闭：丢弃客户端的会话更新数据包（ServerboundChatSessionUpdatePacket），
+  # 效仿 Lophine 等分支"不校验公钥"的行为，避免外置登录（如 LittleSkin）玩家的密钥因无法通过原版签名校验而被踢出（Invalid signature for profile public key）。
+  # 开启后：放行签名合法的密钥（正版玩家保留安全聊天），仅丢弃验签失败的会话。
+  # 如果需要 Lophine 等分支"不校验公钥"的行为生效请将此项设置成true。
+  # 默认值: false
+  profile-key-verify: false
+
+  # 用户名正则约束，不匹配的玩家将被拒绝登录。
+  # 留空（''）则禁用此功能。
+  # 默认值: '^[0-9a-zA-Z_]{3,16}$'
+  name-allowed-regular: '^[0-9a-zA-Z_]{3,16}$'
+
+  # 是否启用 bStats 匿名统计（https://bstats.org）。
+  # 数据完全匿名，仅用于了解插件使用量；可随时关闭。
+  # 关闭时同时跳过 bStats 全局配置检查，完全停止上报。
+  # 默认值: true
+  metrics-enabled: true
