@@ -369,11 +369,13 @@ public final class LoginHandler {
 
         private void kick(LoginSession session, String message) {
             try {
-                Component reason = Component.literal(message);
+                net.minecraft.network.chat.Component reason = net.minecraft.network.chat.Component.literal(
+                    message.replaceAll("&([0-9a-fk-or])", "\u00a7$1")
+                );
                 this.connection.send(new ClientboundLoginDisconnectPacket(reason));
                 this.connection.disconnect(reason);
             } catch (Exception e) {
-                plugin.getLogger().log(Level.SEVERE,"Failed to kick " + session.getUsername(), e);
+                plugin.getLogger().log(Level.SEVERE, "Failed to kick " + session.getUsername(), e);
             }
         }
 
