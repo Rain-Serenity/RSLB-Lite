@@ -16,11 +16,13 @@ import com.rserene.chosen.server.api.RSLBAPIProvider;
 import com.rserene.chosen.server.player.RSLBPlayerData;
 import com.rserene.chosen.server.main.RSLBCoreAPI;
 import com.rserene.chosen.server.auth.AuthHandler;
+import com.rserene.chosen.server.auth.service.yggdrasil.serialize.GameProfileSerializer;
 import com.rserene.chosen.server.command.CommandHandler;
 import com.rserene.chosen.server.config.PluginConfig;
 import com.rserene.chosen.server.config.service.BaseServiceConfig;
 import com.rserene.chosen.server.player.PlayerHandler;
 import com.rserene.chosen.server.language.LanguageHandler;
+import com.rserene.chosen.server.profile.GameProfile;
 import com.rserene.chosen.server.util.MessageUtil;
 import org.bukkit.Bukkit;
 import org.jetbrains.annotations.NotNull;
@@ -45,7 +47,10 @@ public class RSLBCore implements RSLBCoreAPI, RSLBAPI {
       this.authHandler = new AuthHandler(this);
       this.commandHandler = new CommandHandler(this);
       this.playerHandler = new PlayerHandler(this);
-      this.gson = new GsonBuilder().setPrettyPrinting().create();
+       this.gson = new GsonBuilder()
+          .setPrettyPrinting()
+          .registerTypeAdapter(GameProfile.class, new GameProfileSerializer())
+          .create();
    }
 
    private void showBanner() {

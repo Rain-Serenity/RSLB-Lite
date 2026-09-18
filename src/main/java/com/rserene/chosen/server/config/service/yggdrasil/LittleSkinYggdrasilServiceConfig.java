@@ -35,6 +35,8 @@ public class LittleSkinYggdrasilServiceConfig extends BaseYggdrasilServiceConfig
    protected String getAuthURL() {
       return this.apiRoot
          .concat("session")
+         .concat("server")
+         .concat("/session")
          .concat("/minecraft")
          .concat("/hasJoined?")
          .concat("username={0}&serverId={1}{2}");
