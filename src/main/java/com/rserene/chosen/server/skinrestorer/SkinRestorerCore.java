@@ -16,7 +16,6 @@ import java.time.Duration;
 import java.util.Base64;
 import java.util.Map;
 import com.rserene.chosen.server.auth.AuthResult;
-import com.rserene.chosen.server.skinrestorer.SkinRestorerAPI;
 import com.rserene.chosen.server.util.Pair;
 import com.rserene.chosen.server.util.ValueUtil;
 import com.rserene.chosen.server.profile.GameProfile;

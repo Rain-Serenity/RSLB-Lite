@@ -3,7 +3,6 @@ package com.rserene.chosen.server.command.argument;
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.context.CommandContext;
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.suggestion.Suggestions;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
 import java.util.HashSet;
@@ -24,20 +23,11 @@ public class OnlinePlayerArgumentType implements ArgumentType<Set<Player>> {
       return new OnlinePlayerArgumentType();
    }
 
-   public static Set<Player> getPlayers(CommandContext<?> context, String name) {
-      return (Set<Player>)context.getArgument(name, Set.class);
-   }
+    public static Set<Player> getPlayers(CommandContext<?> context, String name) {
+       return (Set<Player>)context.getArgument(name, Set.class);
+    }
 
-   public static Player getPlayer(CommandContext<?> context, String name) throws CommandSyntaxException {
-      Set<Player> players = getPlayers(context, name);
-      if (players.size() == 1) {
-         return players.iterator().next();
-      } else {
-         throw UniversalCommandExceptionType.create(CommandHandler.getCore().getLanguageHandler().getMessage("command_message_player_multi_target"));
-      }
-   }
-
-   public Set<Player> parse(StringReader reader) {
+    public Set<Player> parse(StringReader reader) {
       try {
          int i = reader.getCursor();
          String string = StringArgumentType.readString(reader);

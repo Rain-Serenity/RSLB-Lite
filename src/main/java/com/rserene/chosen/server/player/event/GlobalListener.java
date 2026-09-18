@@ -1,6 +1,6 @@
 package com.rserene.chosen.server.player.event;
 
-import com.rserene.chosen.server.RSLB;
+import com.rserene.chosen.server.RSLBL;
 import com.rserene.chosen.server.player.HandleResult;
 import com.rserene.chosen.server.player.HandlerAPI;
 import net.kyori.adventure.text.Component;
@@ -14,9 +14,9 @@ import org.bukkit.event.player.PlayerQuitEvent;
  * 全局 Bukkit 事件监听器：负责玩家进出游戏时的核心流程推送。
  */
 public final class GlobalListener implements Listener {
-    private final RSLB plugin;
+    private final RSLBL plugin;
 
-    public GlobalListener(RSLB plugin) {
+    public GlobalListener(RSLBL plugin) {
         this.plugin = plugin;
     }
 

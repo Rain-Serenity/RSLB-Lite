@@ -13,24 +13,20 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
- * RSLB Lite 主插件入口（Paper 26.3 / Folia）。
+ * RSLBL Lite 主插件入口（Paper 26.3 / Folia）。
  *
  * 启动流程：
- *  1. 初始化 RSLB 核心（RSLBCore）：加载配置、语言文件、认证服务
+ *  1. 初始化 RSLBL 核心（RSLBCore）：加载配置、语言文件、认证服务
  *     （日志直接使用 JavaPlugin.getLogger()，debug 开关由核心 debugEnabled 控制）；
  *  2. 注册事件监听（GlobalListener）与指令（CommandHandler）；
  *  3. 启动登录拦截器（LoginHandler）：包装 netty acceptor，强制所有登录
  *     经过 Yggdrasil 认证后才进入游戏。
  */
-public final class RSLB extends JavaPlugin {
+public final class RSLBL extends JavaPlugin {
     private static final int PLUGIN_ID = 34100;
-    private static RSLB instance;
+    private static RSLBL instance;
     private RSLBCoreAPI coreAPI;
     private LoginHandler authListener;
-
-    @Override
-    public void onLoad() {
-    }
 
     @Override
     public void onEnable() {
@@ -124,10 +120,6 @@ public final class RSLB extends JavaPlugin {
         return Bukkit.getOnlineMode() || isBehindProxy() || isAuthListenerActive();
     }
 
-    public boolean isForwardedEnvironment() {
-        return true;
-    }
-
     private static boolean isBehindProxy() {
         try {
             File spigotFile = new File("spigot.yml");
@@ -160,7 +152,7 @@ public final class RSLB extends JavaPlugin {
         return this.authListener != null;
     }
 
-    public static RSLB getInstance() {
+    public static RSLBL getInstance() {
         return instance;
     }
 }

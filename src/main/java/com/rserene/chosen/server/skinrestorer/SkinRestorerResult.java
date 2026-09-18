@@ -11,13 +11,12 @@ public interface SkinRestorerResult {
 
    Throwable getThrowable();
 
-   enum Reason {
-      NO_SKIN,
-      NO_RESTORER,
-      USE_CACHE,
-      SIGNATURE_VALID,
-      BAD_SKIN,
-      RESTORER_SUCCEED,
-      RESTORER_FAILED;
-   }
+    enum Reason {
+       NO_SKIN,
+       NO_RESTORER,
+       SIGNATURE_VALID,
+       BAD_SKIN,
+       RESTORER_SUCCEED,
+       RESTORER_FAILED;
+    }
 }

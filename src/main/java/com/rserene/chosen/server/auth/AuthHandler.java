@@ -1,7 +1,5 @@
 package com.rserene.chosen.server.auth;
 
-import lombok.Generated;
-import com.rserene.chosen.server.auth.AuthAPI;
 import com.rserene.chosen.server.profile.GameProfile;
 import com.rserene.chosen.server.auth.service.BaseServiceAuthenticationResult;
 import com.rserene.chosen.server.auth.service.yggdrasil.YggdrasilAuthenticationResult;
@@ -108,20 +106,5 @@ public class AuthHandler implements AuthAPI {
             baseServiceAuthenticationResult, null, this.core.getLanguageHandler().getMessage("auth_validate_error")
          );
       }
-   }
-
-   @Generated
-   public RSLBCore getCore() {
-      return this.core;
-   }
-
-   @Generated
-   public YggdrasilAuthenticationService getYggdrasilAuthenticationService() {
-      return this.yggdrasilAuthenticationService;
-   }
-
-   @Generated
-   public ValidateAuthenticationService getValidateAuthenticationService() {
-      return this.validateAuthenticationService;
    }
 }

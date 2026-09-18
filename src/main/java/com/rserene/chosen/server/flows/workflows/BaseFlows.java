@@ -8,16 +8,10 @@ import lombok.Generated;
 public abstract class BaseFlows<CONTEXT> {
    private static final AtomicInteger asyncThreadId = new AtomicInteger(0);
    private static final ExecutorService executorService = Executors.newCachedThreadPool(r -> {
-      Thread thread = new Thread(r, "RSLB Flows #" + asyncThreadId.incrementAndGet());
+      Thread thread = new Thread(r, "RSLBL Flows #" + asyncThreadId.incrementAndGet());
       thread.setDaemon(true);
       return thread;
    });
-
-   public static synchronized void close() {
-      if (!executorService.isShutdown()) {
-         executorService.shutdown();
-      }
-   }
 
    public abstract Signal run(CONTEXT var1);
 

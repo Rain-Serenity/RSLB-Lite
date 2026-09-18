@@ -14,9 +14,6 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.logging.Level;
 import lombok.Generated;
-import com.rserene.chosen.server.command.CommandAPI;
-import com.rserene.chosen.server.util.Pair;
-import com.rserene.chosen.server.profile.GameProfile;
 import com.rserene.chosen.server.command.commands.RootCommand;
 import com.rserene.chosen.server.main.RSLBCore;
 import com.rserene.chosen.server.util.MessageUtil;
@@ -99,42 +96,8 @@ public class CommandHandler implements CommandAPI {
       }
    }
 
-   public final void requirePlayerAndNoSelf(CommandContext<CommandSender> context, Player player) throws CommandSyntaxException {
-      if (!(context.getSource() instanceof Player)) {
-         throw builtInExceptions.requirePlayer().create();
-      }
-
-      if (((Player)context.getSource()).getUniqueId().equals(player.getUniqueId())) {
-         throw builtInExceptions.noSelf().create();
-      }
-   }
-
-   public final Pair<GameProfile, Integer> requireDataCacheArgumentSelf(CommandContext<CommandSender> context) throws CommandSyntaxException {
-      this.requirePlayer(context);
-      Pair<GameProfile, Integer> profile = core.getPlayerHandler().getPlayerOnlineProfile(((Player)context.getSource()).getUniqueId());
-      if (profile == null) {
-         throw builtInExceptions.cacheNotFoundSelf().create();
-      } else {
-         return profile;
-      }
-   }
-
-   public final Pair<GameProfile, Integer> requireDataCacheArgumentOther(Player player) throws CommandSyntaxException {
-      Pair<GameProfile, Integer> profile = core.getPlayerHandler().getPlayerOnlineProfile(player.getUniqueId());
-      if (profile == null) {
-         throw builtInExceptions.cacheNotFoundOther().create(player.getUniqueId(), player.getName());
-      } else {
-         return profile;
-      }
-   }
-
    @Generated
    public static RSLBCore getCore() {
       return core;
-   }
-
-   @Generated
-   public static BuiltInExceptions getBuiltInExceptions() {
-      return builtInExceptions;
    }
 }

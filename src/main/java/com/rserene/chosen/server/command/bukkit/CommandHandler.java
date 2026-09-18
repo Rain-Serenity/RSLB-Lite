@@ -1,6 +1,6 @@
 package com.rserene.chosen.server.command.bukkit;
 
-import com.rserene.chosen.server.RSLB;
+import com.rserene.chosen.server.RSLBL;
 import com.rserene.chosen.server.command.CommandAPI;
 import com.rserene.chosen.server.main.RSLBCoreAPI;
 import com.rserene.chosen.server.util.MessageUtil;
@@ -23,9 +23,9 @@ import org.bukkit.command.TabCompleter;
  */
 public final class CommandHandler implements CommandExecutor, TabCompleter {
     private static final Node ROOT = buildTree();
-    private final RSLB plugin;
+    private final RSLBL plugin;
 
-    public CommandHandler(RSLB plugin) {
+    public CommandHandler(RSLBL plugin) {
         this.plugin = plugin;
     }
 

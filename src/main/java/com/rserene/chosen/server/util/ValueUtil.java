@@ -1,47 +1,11 @@
 package com.rserene.chosen.server.util;
 
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.Collection;
 import java.util.List;
-import java.util.StringJoiner;
 import java.util.UUID;
 import org.jetbrains.annotations.ApiStatus;
 
 @ApiStatus.Internal
 public class ValueUtil {
-   public static byte[] uuidToBytes(UUID uuid) {
-      byte[] uuidBytes = new byte[16];
-      ByteBuffer.wrap(uuidBytes).order(ByteOrder.BIG_ENDIAN).putLong(uuid.getMostSignificantBits()).putLong(uuid.getLeastSignificantBits());
-      return uuidBytes;
-   }
-
-   public static UUID bytesToUuid(byte[] bytes) {
-      if (bytes.length != 16) {
-         return null;
-      }
-
-      int i = 0;
-      long msl = 0L;
-
-      while (i < 8) {
-         msl = msl << 8 | bytes[i] & 0xFF;
-         i++;
-      }
-
-      long lsl = 0L;
-
-      while (i < 16) {
-         lsl = lsl << 8 | bytes[i] & 0xFF;
-         i++;
-      }
-
-      return new UUID(msl, lsl);
-   }
-
    public static UUID getUuidOrNull(String uuid) {
       UUID ret = null;
 
@@ -73,46 +37,6 @@ public class ValueUtil {
       }
 
       return s;
-   }
-
-   public static String join(CharSequence delimiter, CharSequence lastDelimiter, Object... elements) {
-      if (elements.length == 0) {
-         return "";
-      }
-
-      if (elements.length == 1) {
-         return elements[0].toString();
-      }
-
-      StringJoiner joiner = new StringJoiner(delimiter);
-
-      for (int i = 0; i < elements.length - 1; i++) {
-         joiner.add(elements[i].toString());
-      }
-
-      return joiner.toString() + lastDelimiter + elements[elements.length - 1];
-   }
-
-   public static String join(CharSequence delimiter, CharSequence lastDelimiter, Collection<? extends Object> elements) {
-      return join(delimiter, lastDelimiter, elements.toArray(new Object[0]));
-   }
-
-   public static byte[] sha256(String str) throws NoSuchAlgorithmException {
-      return MessageDigest.getInstance("SHA-256").digest(str.getBytes(StandardCharsets.UTF_8));
-   }
-
-   public static UUID xuidToUUID(String xuid) {
-      return new UUID(0L, Long.parseLong(xuid));
-   }
-
-   public static String generateLinkCode() {
-      StringBuilder builder = new StringBuilder();
-
-      for (int i = 0; i < 6; i++) {
-         builder.append((int)(10.0 * Math.random()));
-      }
-
-      return builder.toString();
    }
 
    /**

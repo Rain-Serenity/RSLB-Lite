@@ -36,19 +36,19 @@ public class SkinRestorerFlows implements Callable<SkinRestorerResultImpl> {
    private final String skinModel;
    private final GameProfile profile;
 
-   protected SkinRestorerFlows(RSLBCore core, BaseServiceConfig config, OkHttpClient okHttpClient, String skinUrl, String skinModel, GameProfile profile) {
-      this.core = core;
-      this.config = config;
-      this.okHttpClient = okHttpClient;
-      this.skinUrl = skinUrl;
-      this.skinModel = skinModel;
-      this.profile = profile;
-   }
+    protected SkinRestorerFlows(RSLBCore core, BaseServiceConfig config, OkHttpClient okHttpClient, String skinUrl, String skinModel, GameProfile profile) {
+       this.core = core;
+       this.config = config;
+       this.okHttpClient = okHttpClient;
+       this.skinUrl = skinUrl;
+       this.skinModel = skinModel;
+       this.profile = profile;
+    }
 
-   public SkinRestorerResultImpl call() throws Exception {
-      byte[] bytes;
-      try {
-         bytes = this.requireValidSkin(this.skinUrl, this.skinModel);
+    public SkinRestorerResultImpl call() throws Exception {
+       byte[] bytes;
+       try {
+          bytes = this.requireValidSkin(this.skinUrl);
       } catch (Exception e) {
          return SkinRestorerResultImpl.ofBadSkin(e);
       }
@@ -200,7 +200,7 @@ public class SkinRestorerFlows implements Callable<SkinRestorerResultImpl> {
       return false;
    }
 
-   private byte[] requireValidSkin(String skinUrl, String model) throws IOException {
+    private byte[] requireValidSkin(String skinUrl) throws IOException {
       Request request = new Builder().get().header("User-Agent", this.core.getHttpRequestHeaderUserAgent()).url(skinUrl).build();
       byte[] bytes = Objects.requireNonNull(this.okHttpClient.newCall(request).execute().body()).bytes();
       BufferedImage image;

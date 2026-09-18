@@ -9,9 +9,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.stream.Collectors;
 import lombok.Generated;
-import com.rserene.chosen.server.player.RSLBPlayerData;
-import com.rserene.chosen.server.player.HandleResult;
-import com.rserene.chosen.server.player.HandlerAPI;
 import com.rserene.chosen.server.player.HandleResult.Type;
 import com.rserene.chosen.server.util.Pair;
 import com.rserene.chosen.server.profile.GameProfile;
@@ -111,22 +108,7 @@ public class PlayerHandler implements HandlerAPI {
         return entry == null ? null : new Pair<>(entry.onlineProfile, entry.serviceConfig);
     }
 
-   public UUID getInGameUUID(UUID onlineUUID, int serviceId) {
-      for (Map.Entry<UUID, PlayerHandler.Entry> entry : this.cache.entrySet()) {
-         if (entry.getValue().onlineProfile.getId().equals(onlineUUID) && entry.getValue().serviceConfig.getId() == serviceId) {
-            return entry.getKey();
-         }
-      }
-
-      return null;
-   }
-
-   public String getServiceName(int serviceId) {
-      BaseServiceConfig config = this.core.getPluginConfig().getServiceIdMap().get(serviceId);
-      return config == null ? null : config.getName();
-   }
-
-   public void register() {
+    public void register() {
       Bukkit.getAsyncScheduler()
          .runAtFixedRate(
             this.core.getPlugin(),

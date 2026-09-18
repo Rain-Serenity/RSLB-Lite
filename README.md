@@ -63,3 +63,10 @@ settings:
 
 - Java 25+
 - Paper/Folia 26.3
+
+## 许可
+本项目为原创项目，采用 GPL-3.0 开源协议。  
+本插件皮肤修复功能部分参照 [SkinsRestorer](https://GitHub.com/SkinsRestorer/SkinsRestorer/) 。
+
+## 支持这个项目
+如果你觉得这个项目对你有帮助的话欢迎[支持](https://www.RSerene.com/about/sponsor.html)我们！

@@ -1,6 +1,6 @@
 name: RSLB-Lite
 version: '${version}'
-main: com.rserene.chosen.server.RSLB
+main: com.rserene.chosen.server.RSLBL
 author: Chosen_1st
 website: www.RSerene.com
 api-version: '26.3'

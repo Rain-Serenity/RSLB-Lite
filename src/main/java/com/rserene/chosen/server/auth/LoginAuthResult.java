@@ -1,8 +1,6 @@
 package com.rserene.chosen.server.auth;
 
 import lombok.Generated;
-import com.rserene.chosen.server.auth.AuthResult;
-import com.rserene.chosen.server.auth.AuthResult.Result;
 import com.rserene.chosen.server.profile.GameProfile;
 import com.rserene.chosen.server.auth.service.BaseServiceAuthenticationResult;
 import com.rserene.chosen.server.auth.service.yggdrasil.UnmodifiableGameProfile;
@@ -63,13 +61,8 @@ public class LoginAuthResult implements AuthResult {
       return this.result;
    }
 
-   @Generated
-   public BaseServiceAuthenticationResult getBaseServiceAuthenticationResult() {
-      return this.baseServiceAuthenticationResult;
-   }
-
-   @Generated
-   public ValidateAuthenticationResult getValidateAuthenticationResult() {
-      return this.validateAuthenticationResult;
-   }
+    @Generated
+    public BaseServiceAuthenticationResult getBaseServiceAuthenticationResult() {
+       return this.baseServiceAuthenticationResult;
+    }
 }

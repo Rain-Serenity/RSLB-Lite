@@ -10,11 +10,10 @@ import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import lombok.Generated;
-import com.rserene.chosen.server.RSLB;
+import com.rserene.chosen.server.RSLBL;
 import com.rserene.chosen.server.api.RSLBAPI;
 import com.rserene.chosen.server.api.RSLBAPIProvider;
 import com.rserene.chosen.server.player.RSLBPlayerData;
-import com.rserene.chosen.server.main.RSLBCoreAPI;
 import com.rserene.chosen.server.auth.AuthHandler;
 import com.rserene.chosen.server.auth.service.yggdrasil.serialize.GameProfileSerializer;
 import com.rserene.chosen.server.command.CommandHandler;
@@ -29,7 +28,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class RSLBCore implements RSLBCoreAPI, RSLBAPI {
-   private final RSLB plugin;
+   private final RSLBL plugin;
    private final Logger logger;
    private volatile boolean debugEnabled;
    private final PluginConfig pluginConfig;
@@ -39,7 +38,7 @@ public class RSLBCore implements RSLBCoreAPI, RSLBAPI {
    private final PlayerHandler playerHandler;
    private final Gson gson;
 
-   public RSLBCore(RSLB plugin) {
+   public RSLBCore(RSLBL plugin) {
       this.plugin = plugin;
       this.logger = plugin.getLogger();
       this.languageHandler = new LanguageHandler(this);
@@ -54,7 +53,7 @@ public class RSLBCore implements RSLBCoreAPI, RSLBAPI {
    }
 
    private void showBanner() {
-      MessageUtil.sendLegacy(Bukkit.getConsoleSender(), "\u001b[40;36m[RSLB] 正版与 LittleSkin 登录\u001b[0m");
+       MessageUtil.sendLegacy(Bukkit.getConsoleSender(), "\u001b[40;36m[RSLBL] 正版与 LittleSkin 登录\u001b[0m");
    }
 
    public void load() throws IOException, URISyntaxException {
@@ -66,7 +65,7 @@ public class RSLBCore implements RSLBCoreAPI, RSLBAPI {
       this.playerHandler.register();
       this.logger.info(
          String.format(
-            "Loaded, using RSLB v%s on %s - %s",
+            "Loaded, using RSLBL v%s on %s - %s",
             this.plugin.getPluginVersion(),
             Bukkit.getName(),
             Bukkit.getVersion()
@@ -80,12 +79,6 @@ public class RSLBCore implements RSLBCoreAPI, RSLBAPI {
          this.logger.severe("Please enable online mode, otherwise the plugin will not work!!!");
          this.logger.severe("Server is closing!!!");
          throw new EnvironmentException("offline mode.");
-      }
-
-      if (!this.plugin.isForwardedEnvironment()) {
-         this.logger.severe("Please enable forwarding, otherwise the plugin will not work!!!");
-         this.logger.severe("Server is closing!!!");
-         throw new EnvironmentException("do not forward.");
       }
    }
 
@@ -108,7 +101,7 @@ public class RSLBCore implements RSLBCoreAPI, RSLBAPI {
    }
 
    @Generated
-   public RSLB getPlugin() {
+   public RSLBL getPlugin() {
       return this.plugin;
    }
 
@@ -177,6 +170,6 @@ public class RSLBCore implements RSLBCoreAPI, RSLBAPI {
 
    @Generated
    public String getHttpRequestHeaderUserAgent() {
-      return "RSLB/" + this.plugin.getPluginVersion();
+       return "RSLBL/" + this.plugin.getPluginVersion();
    }
 }

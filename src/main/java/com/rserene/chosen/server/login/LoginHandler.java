@@ -1,7 +1,7 @@
 package com.rserene.chosen.server.login;
 
 import com.google.common.primitives.Ints;
-import com.rserene.chosen.server.RSLB;
+import com.rserene.chosen.server.RSLBL;
 import com.rserene.chosen.server.auth.AuthResult;
 import com.rserene.chosen.server.auth.LoginAuthResult;
 import com.rserene.chosen.server.config.PluginConfig;
@@ -49,7 +49,7 @@ import org.bukkit.Bukkit;
  * ServerboundHelloPacket 被消费并替换为携带 shouldAuthenticate=true 的
  * 原生 ClientboundHelloPacket，强制 26.2 客户端携带会话令牌调用 joinServer。
  * ServerboundKeyPacket 被消费后用服务器密钥对解密共享密钥，得到 serverId，
- * 再经 RSLB 的 AuthHandler（hasJoined）对每个已配置的 Yggdrasil 服务校验。
+ * 再经 RSLBL 的 AuthHandler（hasJoined）对每个已配置的 Yggdrasil 服务校验。
  * 仅当返回 ALLOW 时，通过反射设置登录监听器的 authenticatedProfile 与
  * state = VERIFYING 恢复 vanilla 登录状态机，由原生 tick() 驱动压缩、
  * 重名检查与 LoginFinished。未认证玩家在登录阶段即被断开，无法进入游戏。
@@ -68,7 +68,7 @@ public final class LoginHandler {
     private static final String ACCEPTOR_CLASS = "io.netty.bootstrap.ServerBootstrap$ServerBootstrapAcceptor";
     private static final AtomicInteger AUTH_THREAD_ID = new AtomicInteger();
 
-    private final RSLB plugin;
+    private final RSLBL plugin;
     private final MinecraftServer server;
     private final Map<Connection, LoginSession> sessions = new ConcurrentHashMap<>();
     private final Set<Object> wrappedAcceptors = ConcurrentHashMap.newKeySet();
@@ -81,7 +81,7 @@ public final class LoginHandler {
 
     private volatile io.papermc.paper.threadedregions.scheduler.ScheduledTask tickTask;
 
-    public LoginHandler(RSLB plugin) {
+    public LoginHandler(RSLBL plugin) {
         this.plugin = plugin;
         this.server = getMinecraftServer();
         try {
@@ -335,7 +335,7 @@ public final class LoginHandler {
                             return;
                         }
                         plugin.logDebug(
-                            "Authenticated " + session.getUsername() + " -> " + mojangProfile.id() + " via RSLB"
+                            "Authenticated " + session.getUsername() + " -> " + mojangProfile.id() + " via RSLBL"
                         );
                         final com.mojang.authlib.GameProfile acceptedProfile = mojangProfile;
                         Bukkit.getGlobalRegionScheduler().run(plugin, task -> completeLogin(acceptedProfile));
@@ -348,7 +348,7 @@ public final class LoginHandler {
                     plugin.getLogger().log(Level.SEVERE,"Auth error for " + session.getUsername(), e);
                     kick(session, "认证过程发生错误，请重试");
                 }
-            }, "RSLB Auth #" + AUTH_THREAD_ID.incrementAndGet()).start();
+            }, "RSLBL Auth #" + AUTH_THREAD_ID.incrementAndGet()).start();
         }
 
         private void completeLogin(com.mojang.authlib.GameProfile profile) {

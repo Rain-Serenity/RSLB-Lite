@@ -1,9 +1,7 @@
 package com.rserene.chosen.server.skinrestorer;
 
 import lombok.Generated;
-import com.rserene.chosen.server.RSLB;
-import com.rserene.chosen.server.skinrestorer.SkinRestorerResult;
-import com.rserene.chosen.server.skinrestorer.SkinRestorerResult.Reason;
+import com.rserene.chosen.server.RSLBL;
 import com.rserene.chosen.server.profile.GameProfile;
 
 public class SkinRestorerResultImpl implements SkinRestorerResult {
@@ -23,10 +21,6 @@ public class SkinRestorerResultImpl implements SkinRestorerResult {
       return new SkinRestorerResultImpl(Reason.SIGNATURE_VALID, null, null);
    }
 
-   public static SkinRestorerResultImpl ofUseCache(GameProfile profile) {
-      return new SkinRestorerResultImpl(Reason.USE_CACHE, profile, null);
-   }
-
    public static SkinRestorerResultImpl ofRestorerSucceed(GameProfile profile) {
       return new SkinRestorerResultImpl(Reason.RESTORER_SUCCEED, profile, null);
    }
@@ -40,7 +34,7 @@ public class SkinRestorerResultImpl implements SkinRestorerResult {
    }
 
    public static void handleSkinRestoreResult(Throwable throwable) {
-      RSLB.getInstance().getLogger().log(java.util.logging.Level.SEVERE, "An exception occurred while processing the skin repair.", throwable);
+      RSLBL.getInstance().getLogger().log(java.util.logging.Level.SEVERE, "An exception occurred while processing the skin repair.", throwable);
    }
 
    public static void handleSkinRestoreResult(SkinRestorerResultImpl result) {

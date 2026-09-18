@@ -48,6 +48,9 @@ welcome_msg: "&8[&b&lRSLB&8]&r&a欢迎 &e{online_name} &a加入服务器！您�
 # 执行指令时发生异常
 command_error: "&8[&b&lRSLB&8]&r&c处理用户指令时发生异常，请与服务器管理员取得联系。"
 
+# 指令错误头部
+command_message_error_header: "&8[&b&lRSLB&8]&r&c"
+
 # 没有权限使用指令
 command_message_no_permission: "&8[&b&lRSLB&8]&r&c你没有权限使用此指令"
 

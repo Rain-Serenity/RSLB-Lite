@@ -15,8 +15,4 @@ public interface HandlerAPI {
    void callPlayerJoinGame(Player var1);
 
    Pair<GameProfile, Integer> getPlayerOnlineProfile(UUID var1);
-
-   UUID getInGameUUID(UUID var1, int var2);
-
-   String getServiceName(int var1);
 }
