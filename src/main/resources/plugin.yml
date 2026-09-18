@@ -1,4 +1,4 @@
-name: RSLBL-Lite
+name: RSLB-Lite
 version: '${version}'
 main: com.rserene.chosen.server.RSLBL
 author: Chosen_1st
@@ -7,7 +7,7 @@ api-version: '26.3'
 folia-supported: true
 commands:
   rslb:
-    description: "RSLBL Lite 登录管理指令"
+    description: "RSLB Lite 登录管理指令"
     usage: "/rslb help"
     permission: rslb.base
     permission-message: "&c你没有权限使用此指令。"
