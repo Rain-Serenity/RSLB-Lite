@@ -57,7 +57,7 @@ settings:
 ./gradlew build
 ```
 
-输出：`build/libs/RSLB-Lite-x.x-SNAPSHOT-all.jar`
+输出：`build/libs/RSLB-Lite-x.x-all.jar`
 
 ## 环境要求
 
