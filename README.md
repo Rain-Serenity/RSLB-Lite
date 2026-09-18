@@ -12,22 +12,22 @@ Minecraft Paper/Folia 插件，实现 Mojang 正版登录与 Yggdrasil 外置登
 
 ## 命令
 
-| 命令 | 说明 | 权限 |
-|------|------|------|
-| `/rslb help` | 显示帮助列表 | `rslb.base` |
-| `/rslb info` | 查看自己的登录档案 | `rslb.info.oneself` |
-| `/rslb info <player>` | 查看指定玩家的登录档案 | `rslb.info.other` |
-| `/rslb reload` | 重载配置文件 | `rslb.reload` |
+| 命令                    | 说明          | 权限                  |
+|-----------------------|-------------|---------------------|
+| `/rslb help`          | 显示帮助列表      | `rslb.base`         |
+| `/rslb info`          | 查看自己的登录档案   | `rslb.info.oneself` |
+| `/rslb info <player>` | 查看指定玩家的登录档案 | `rslb.info.other`   |
+| `/rslb reload`        | 重载配置文件      | `rslb.reload`       |
 
 ## 权限节点
 
-| 节点 | 默认 | 说明 |
-|------|------|------|
-| `rslb.base` | true | 基础命令权限 |
+| 节点                  | 默认   | 说明       |
+|---------------------|------|----------|
+| `rslb.base`         | true | 基础命令权限   |
 | `rslb.tab.complete` | true | Tab 补全权限 |
-| `rslb.reload` | op | 重载配置 |
-| `rslb.info.oneself` | op | 查询自己 |
-| `rslb.info.other` | op | 查询他人 |
+| `rslb.reload`       | op   | 重载配置     |
+| `rslb.info.oneself` | op   | 查询自己     |
+| `rslb.info.other`   | op   | 查询他人     |
 
 ## 配置
 
@@ -54,12 +54,12 @@ settings:
 ## 构建
 
 ```bash
-./gradlew shadowJar
+./gradlew build
 ```
 
-输出：`build/libs/RSLB-Lite-1.0-SNAPSHOT-all.jar`
+输出：`build/libs/RSLB-Lite-x.x-SNAPSHOT-all.jar`
 
 ## 环境要求
 
 - Java 25+
-- Paper/Folia 26.3+
+- Paper/Folia 26.3
