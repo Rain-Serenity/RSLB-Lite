@@ -1,5 +1,5 @@
 # ============================================================
-#  RSLB Lite 语言文件 (UTF-8)
+#  RSLBL Lite 语言文件 (UTF-8)
 #
 #  颜色代码使用 '&' 前缀，例如 &a=绿色 &c=红色 &e=黄色 &b=天蓝
 #  &l=加粗 &o=斜体 &n=下划线 &r=重置 &8=深灰
@@ -12,96 +12,96 @@
 # ==================== 登录认证 ====================
 
 # 认证服务器网络故障或返回意外结果
-auth_yggdrasil_failed_server_down: "&8[&b&lRSLB&8]&r&c由于服务器网络问题，或是账户验证服务器返回了个意料之外的结果，导致暂时不能验证您的会话信息，请重试。"
+auth_yggdrasil_failed_server_down: "&8[&b&lRSLBL&8]&r&c由于服务器网络问题，或是账户验证服务器返回了个意料之外的结果，导致暂时不能验证您的会话信息，请重试。"
 
 # 会话无效（客户端外置登录配置不正确）
-auth_yggdrasil_failed_validation_failed: "&8[&b&lRSLB&8]&r&c无效的会话，请检查客户端外置登录配置。"
+auth_yggdrasil_failed_validation_failed: "&8[&b&lRSLBL&8]&r&c无效的会话，请检查客户端外置登录配置。"
 
 # 处理登录数据时出错
-auth_yggdrasil_error: "&8[&b&lRSLB&8]&r&c在处理您的登录数据时出现问题，请与服务器管理员取得联系。"
+auth_yggdrasil_error: "&8[&b&lRSLBL&8]&r&c在处理您的登录数据时出现问题，请与服务器管理员取得联系。"
 
 # 服务器未配置任何验证服务
-auth_failed_no_yggdrasil_service: "&8[&b&lRSLB&8]&r&c服务器尚未添加任何世界树验证服务器，请尝试与服务器管理员取得联系。"
+auth_failed_no_yggdrasil_service: "&8[&b&lRSLBL&8]&r&c服务器尚未添加任何世界树验证服务器，请尝试与服务器管理员取得联系。"
 
 # 未知错误
-auth_yggdrasil_failed_unknown: "&8[&b&lRSLB&8]&r&c未知的错误，请与服务器管理员取得联系。"
+auth_yggdrasil_failed_unknown: "&8[&b&lRSLBL&8]&r&c未知的错误，请与服务器管理员取得联系。"
 
 # 验证判断过程出错
-auth_validate_error: "&8[&b&lRSLB&8]&r&c在判断您是否能登录到这个服务器时出现了错误，请与服务器管理员取得联系。"
+auth_validate_error: "&8[&b&lRSLBL&8]&r&c在判断您是否能登录到这个服务器时出现了错误，请与服务器管理员取得联系。"
 
 # 用户名与正则不匹配
-auth_validate_failed_username_mismatch: "&8[&b&lRSLB&8]&r&c您使用的名字 &e{name}&c 与正则 &e{regular}&c 不匹配，请更改。"
+auth_validate_failed_username_mismatch: "&8[&b&lRSLBL&8]&r&c您使用的名字 &e{name}&c 与正则 &e{regular}&c 不匹配，请更改。"
 
 # 需要经过登录验证才能进入
-auth_handler_need_use_login: "&8[&b&lRSLB&8]&r&c您需要通过 &eRSereneLogin &c的验证来进入这个服务器，如有疑问，请与服务器管理员取得联系。"
+auth_handler_need_use_login: "&8[&b&lRSLBL&8]&r&c您需要通过 &eRSereneLogin &c的验证来进入这个服务器，如有疑问，请与服务器管理员取得联系。"
 
 # ==================== 入服消息 ====================
 
 # 欢迎消息（未注册档案）
-welcome_msg_to_unknown: "&8[&b&lRSLB&8]&r&a吼吼吼，欢迎 &e{profile_name} &a加入服务器！！！"
+welcome_msg_to_unknown: "&8[&b&lRSLBL&8]&r&a吼吼吼，欢迎 &e{profile_name} &a加入服务器！！！"
 
 # 欢迎消息
-welcome_msg: "&8[&b&lRSLB&8]&r&a欢迎 &e{online_name} &a加入服务器！您通过 &e{service_name} &a加入服务器，当前游戏内档案为 &e{profile_name}&a。"
+welcome_msg: "&8[&b&lRSLBL&8]&r&a欢迎 &e{online_name} &a加入服务器！您通过 &e{service_name} &a加入服务器，当前游戏内档案为 &e{profile_name}&a。"
 
 # ==================== 指令通用 ====================
 
 # 执行指令时发生异常
-command_error: "&8[&b&lRSLB&8]&r&c处理用户指令时发生异常，请与服务器管理员取得联系。"
+command_error: "&8[&b&lRSLBL&8]&r&c处理用户指令时发生异常，请与服务器管理员取得联系。"
 
 # 指令错误头部
-command_message_error_header: "&8[&b&lRSLB&8]&r&c"
+command_message_error_header: "&8[&b&lRSLBL&8]&r&c"
 
 # 没有权限使用指令
-command_message_no_permission: "&8[&b&lRSLB&8]&r&c你没有权限使用此指令"
+command_message_no_permission: "&8[&b&lRSLBL&8]&r&c你没有权限使用此指令"
 
 # 指令只能由玩家执行
-command_message_require_player: "&8[&b&lRSLB&8]&r&c这个指令只能由玩家执行。"
+command_message_require_player: "&8[&b&lRSLBL&8]&r&c这个指令只能由玩家执行。"
 
 # 配置文件重载完成
-command_message_reloaded: "&8[&b&lRSLB&8]&r&a所有文件已重新加载。"
+command_message_reloaded: "&8[&b&lRSLBL&8]&r&a所有文件已重新加载。"
 
 # 不能指定自己
-command_message_player_no_self: "&8[&b&lRSLB&8]&r&c不能指定你自己"
+command_message_player_no_self: "&8[&b&lRSLBL&8]&r&c不能指定你自己"
 
 # 找不到指定 UUID 的在线玩家
-command_message_player_not_online_by_uuid: "&8[&b&lRSLB&8]&r&c找不到UUID为 &e{uuid}&c 的在线玩家。"
+command_message_player_not_online_by_uuid: "&8[&b&lRSLBL&8]&r&c找不到UUID为 &e{uuid}&c 的在线玩家。"
 
 # 找不到指定名字的在线玩家
-command_message_player_not_online_by_name: "&8[&b&lRSLB&8]&r&c找不到名字为 &e{name}&c 的在线玩家。"
+command_message_player_not_online_by_name: "&8[&b&lRSLBL&8]&r&c找不到名字为 &e{name}&c 的在线玩家。"
 
 # 匹配到多个目标，提示改用 UUID
-command_message_player_multi_target: "&8[&b&lRSLB&8]&r&c检索到多名玩家与指定条件相匹配，请考虑使用 &eUUID &c重新检索在线目标。"
+command_message_player_multi_target: "&8[&b&lRSLBL&8]&r&c检索到多名玩家与指定条件相匹配，请考虑使用 &eUUID &c重新检索在线目标。"
 
 # 无法获取自己的登录数据
-command_message_cache_not_found_self: "&8[&b&lRSLB&8]&r&c不能获取您的登录数据，您是用猫踢螺钉来登录的嘛？"
+command_message_cache_not_found_self: "&8[&b&lRSLBL&8]&r&c不能获取您的登录数据，您是用猫踢螺钉来登录的嘛？"
 
 # 无法获取他人登录数据
-command_message_cache_not_found_other: "&8[&b&lRSLB&8]&r&c不能获取玩家 &8[&e{uuid}&8](&e{name}&8) 的登录数据，ta是用猫踢螺钉来登录的嘛？"
+command_message_cache_not_found_other: "&8[&b&lRSLBL&8]&r&c不能获取玩家 &8[&e{uuid}&8](&e{name}&8) 的登录数据，ta是用猫踢螺钉来登录的嘛？"
 
 # ==================== 查询 (info) ====================
 
 # 身份不明的名字
-command_message_info_unidentified_name: "&8[&b&lRSLB&8]&r&8身份不明的"
+command_message_info_unidentified_name: "&8[&b&lRSLBL&8]&r&8身份不明的"
 
 # 检索到多个相似在线玩家
-command_message_info_multi: "&8[&b&lRSLB&8]&r&c寻找到有 &e{0} &c名玩家的游戏ID相似并且同时在线，结果将在下方显示，请注意谨慎使用有关填入玩家名称的指令。"
+command_message_info_multi: "&8[&b&lRSLBL&8]&r&c寻找到有 &e{0} &c名玩家的游戏ID相似并且同时在线，结果将在下方显示，请注意谨慎使用有关填入玩家名称的指令。"
 
 # 绕过登录无法查询的玩家
-command_message_info_unknown: "&8[&b&lRSLB&8]&r&a玩家 &8[&e{uuid}&8](&e{name}&8) &a绕过登录信息无法被查询。"
+command_message_info_unknown: "&8[&b&lRSLBL&8]&r&a玩家 &8[&e{uuid}&8](&e{name}&8) &a绕过登录信息无法被查询。"
 
 # 玩家登录信息
-command_message_info: "&8[&b&lRSLB&8]&r&a玩家 &8(&e{name}&8)[&e{uuid}&8]&a &a的登录方式是 &e{service_name}&8(sid = &e{service_id}&8)&a  &a原始身份为 &a&8(&e{online_name}&8)[&e{online_uuid}&8]"
+command_message_info: "&8[&b&lRSLBL&8]&r&a玩家 &8(&e{name}&8)[&e{uuid}&8]&a &a的登录方式是 &e{service_name}&8(sid = &e{service_id}&8)&a  &a原始身份为 &a&8(&e{online_name}&8)[&e{online_uuid}&8]"
 
 # ==================== 指令帮助 ====================
 
 # 帮助列表头部（{count} = 可用指令数量）
-help_header: "&8[&b&lRSLB&8]&r&a===== 指令帮助 &7(可用的指令共 {count} 条) &a====="
+help_header: "&8[&b&lRSLBL&8]&r&a===== 指令帮助 &7(可用的指令共 {count} 条) &a====="
 
 # 帮助列表底部提示
-help_footer: "&8[&b&lRSLB&8]&r&7提示: 输入 /rslb <指令> 执行对应操作"
+help_footer: "&8[&b&lRSLBL&8]&r&7提示: 输入 /rslb <指令> 执行对应操作"
 
 # 帮助列表条目（{command} = 指令名, {description} = 说明）
-help_entry: "&8[&b&lRSLB&8]&r&a/rslb &e{command}&8 - &7{description}"
+help_entry: "&8[&b&lRSLBL&8]&r&a/rslb &e{command}&8 - &7{description}"
 
 # 各指令说明
 help_reload: "重载插件配置文件与语言文件"
@@ -111,30 +111,30 @@ help_help: "显示本帮助列表"
 # ==================== 指令异常 ====================
 
 # 指令解析异常（保持原样英文）
-command_exception_literal_incorrect: "&8[&b&lRSLB&8]&r&cExpected literal &e{expected}&c."
-command_exception_reader_expected_start_of_quote: "&8[&b&lRSLB&8]&r&cExpected quote to start a string."
-command_exception_reader_expected_end_of_quote: "&8[&b&lRSLB&8]&r&cUnclosed quoted string."
-command_exception_reader_invalid_escape: "&8[&b&lRSLB&8]&r&cInvalid escape sequence &e{character}&c in quoted string."
-command_exception_reader_invalid_bool: "&8[&b&lRSLB&8]&r&cInvalid bool, expected true or false but found &e{value}&c."
-command_exception_reader_invalid_int: "&8[&b&lRSLB&8]&r&c无效的整形数字 &e{value}&c。"
-command_exception_reader_expected_int: "&8[&b&lRSLB&8]&r&cExpected integer."
-command_exception_reader_invalid_long: "&8[&b&lRSLB&8]&r&c无效的长整形数字 &e{value}&c。"
-command_exception_reader_expected_long: "&8[&b&lRSLB&8]&r&cExpected long."
-command_exception_reader_invalid_double: "&8[&b&lRSLB&8]&r&c无效的双精度浮点值 &e{value}&c。"
-command_exception_reader_expected_double: "&8[&b&lRSLB&8]&r&cExpected double."
-command_exception_reader_invalid_float: "&8[&b&lRSLB&8]&r&c无效的单精度浮点值 &e{value}&c。"
-command_exception_reader_expected_float: "&8[&b&lRSLB&8]&r&cExpected float."
-command_exception_reader_expected_bool: "&8[&b&lRSLB&8]&r&cExpected bool."
-command_exception_reader_expected_symbol: "&8[&b&lRSLB&8]&r&cExpected &e{symbol}&c."
+command_exception_literal_incorrect: "&8[&b&lRSLBL&8]&r&cExpected literal &e{expected}&c."
+command_exception_reader_expected_start_of_quote: "&8[&b&lRSLBL&8]&r&cExpected quote to start a string."
+command_exception_reader_expected_end_of_quote: "&8[&b&lRSLBL&8]&r&cUnclosed quoted string."
+command_exception_reader_invalid_escape: "&8[&b&lRSLBL&8]&r&cInvalid escape sequence &e{character}&c in quoted string."
+command_exception_reader_invalid_bool: "&8[&b&lRSLBL&8]&r&cInvalid bool, expected true or false but found &e{value}&c."
+command_exception_reader_invalid_int: "&8[&b&lRSLBL&8]&r&c无效的整形数字 &e{value}&c。"
+command_exception_reader_expected_int: "&8[&b&lRSLBL&8]&r&cExpected integer."
+command_exception_reader_invalid_long: "&8[&b&lRSLBL&8]&r&c无效的长整形数字 &e{value}&c。"
+command_exception_reader_expected_long: "&8[&b&lRSLBL&8]&r&cExpected long."
+command_exception_reader_invalid_double: "&8[&b&lRSLBL&8]&r&c无效的双精度浮点值 &e{value}&c。"
+command_exception_reader_expected_double: "&8[&b&lRSLBL&8]&r&cExpected double."
+command_exception_reader_invalid_float: "&8[&b&lRSLBL&8]&r&c无效的单精度浮点值 &e{value}&c。"
+command_exception_reader_expected_float: "&8[&b&lRSLBL&8]&r&cExpected float."
+command_exception_reader_expected_bool: "&8[&b&lRSLBL&8]&r&cExpected bool."
+command_exception_reader_expected_symbol: "&8[&b&lRSLBL&8]&r&cExpected &e{symbol}&c."
 
 # 未知指令
-command_exception_dispatcher_unknown_command: "&8[&b&lRSLB&8]&r&c未知的指令。"
+command_exception_dispatcher_unknown_command: "&8[&b&lRSLBL&8]&r&c未知的指令。"
 
 # 指令参数不正确
-command_exception_dispatcher_unknown_argument: "&8[&b&lRSLB&8]&r&c指令参数不正确。"
+command_exception_dispatcher_unknown_argument: "&8[&b&lRSLBL&8]&r&c指令参数不正确。"
 
 # 多余参数
-command_exception_dispatcher_exception_argument_separator: "&8[&b&lRSLB&8]&r&cExpected whitespace to end one argument, but found trailing data."
+command_exception_dispatcher_exception_argument_separator: "&8[&b&lRSLBL&8]&r&cExpected whitespace to end one argument, but found trailing data."
 
 # 指令解析失败
-command_exception_dispatcher_parse_exception: "&8[&b&lRSLB&8]&r&c无法解析指令 &e{command}&c。"
+command_exception_dispatcher_parse_exception: "&8[&b&lRSLBL&8]&r&c无法解析指令 &e{command}&c。"
