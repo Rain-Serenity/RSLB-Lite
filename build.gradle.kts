@@ -1,6 +1,7 @@
 plugins {
     id("java-library")
     id("com.gradleup.shadow") version "9.6.1"
+    id("io.papermc.paperweight.userdev") version "2.0.0-beta.23"
     id("xyz.jpenilla.run-paper") version "3.1.0"
 }
 
@@ -10,10 +11,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:26.3.build.+")
-    compileOnly(files("libs/nms-26.3.jar"))
-    compileOnly("com.mojang:authlib:10.0.77")
-    compileOnly("io.netty:netty-all:4.2.16.Final")
+    paperweight.paperDevBundle("26.3.build.19-alpha")
 
     compileOnly("org.jetbrains:annotations:26.1.0")
     compileOnly("org.projectlombok:lombok:1.18.46")
@@ -27,7 +25,6 @@ dependencies {
     implementation("org.ow2.asm:asm:9.10.1")
     implementation("org.ow2.asm:asm-commons:9.10.1")
     implementation("com.google.code.gson:gson:2.14.0")
-    implementation("com.mojang:brigadier:1.3.11")
 }
 
 java {
