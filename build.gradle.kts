@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-    paperweight.paperDevBundle("26.3.build.19-alpha")
+    paperweight.paperDevBundle("26.3.build.+")
 
     compileOnly("org.jetbrains:annotations:26.1.0")
     compileOnly("org.projectlombok:lombok:1.18.48")
